@@ -469,9 +469,9 @@ abstract class Kohana_Mango implements Mango_Interface {
 
 			if ( $this->__isset($name))
 			{
-				if ( $value === NULL || $match_default)
+				if ( $match_default)
 				{
-					// setting existing field to NULL / default value -> unset value
+					// setting existing field to default value -> unset value
 					return $this->__unset($name);
 				}
 
@@ -484,9 +484,9 @@ abstract class Kohana_Mango implements Mango_Interface {
 					return FALSE;
 				}
 			}
-			elseif ( $value === NULL || $value === '' || $match_default)
+			elseif ( $match_default)
 			{
-				// setting unset field to NULL / empty string / default value -> nothing happens
+				// setting unset field to default value -> nothing happens
 				return;
 			}
 
